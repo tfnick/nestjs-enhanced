@@ -3,12 +3,12 @@
 A basic nestjs module for providing access to the current request through dependency injection (without using the REQUEST-scoped provider). Currently only applicable to `express` requests.
 
 ### Install:
-`npm install @nestjs-enhanced/context`
+`npm install @tfnick/context`
 
 ### Usage:
 **Register Module**
 ```ts
-import { ContextModule } from '@nestjs-enhanced/context';
+import { ContextModule } from '@tfnick/context';
 
 @Module({
   imports: [
@@ -23,7 +23,7 @@ export class AppModule {
 
 **Access current request**
 ```ts
-import { RequestContextService } from '@nestjs-enhanced/context';
+import { RequestContextService } from '@tfnick/context';
 
 @Injectable()
 export class MyService {
@@ -38,7 +38,7 @@ export class MyService {
 ```
 
 ### Future:
-- Access current `job` from `@nestjs-enhanced/pg-boss`
+- Access current `job` from `@tfnick/pg-boss`
 - Support different contexts
   - fastify
   - microservices

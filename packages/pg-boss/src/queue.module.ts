@@ -1,4 +1,4 @@
-import { UnwrapForRootArgs } from '@nestjs-enhanced/core';
+import { UnwrapForRootArgs } from '@tfnick/core';
 import { DynamicModule, Inject, Logger, Module, NestModule } from '@nestjs/common';
 import { DiscoveryModule } from '@nestjs/core';
 import PgBoss from 'pg-boss';
@@ -42,7 +42,7 @@ export class QueueModule implements NestModule {
 
   logger = new Logger('QueueModule');
 
-  constructor (
+  constructor(
     private pgBoss: PgBoss,
     private explorer: QueueExplorer
   ) { }

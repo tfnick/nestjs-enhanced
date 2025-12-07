@@ -14,12 +14,12 @@ A basic nestjs module for creating new threads to perform work. Currently suppor
 
 
 ### Install:
-`npm install @nestjs-enhanced/workers`
+`npm install @tfnick/workers`
 
 ### Usage:
 **Register Module**
 ```ts
-import { WorkersModule } from '@nestjs-enhanced/workers';
+import { WorkersModule } from '@tfnick/workers';
 
 @Module({
   imports: [
@@ -34,7 +34,7 @@ export class AppModule {
 
 **Create a worker**
 ```ts
-import { Runtime, WorkerService } from '@nestjs-enhanced/workers';
+import { Runtime, WorkerService } from '@tfnick/workers';
 
 @Injectable()
 export class MyService {

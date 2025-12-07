@@ -1,4 +1,4 @@
-import { InjectPubSub, PubSubService } from '@nestjs-enhanced/pub-sub';
+import { InjectPubSub, PubSubService } from '@tfnick/pub-sub';
 import { Injectable, Logger } from '@nestjs/common';
 import { Subject, firstValueFrom, of, race } from 'rxjs';
 import { delay, filter, map, tap } from 'rxjs/operators';
@@ -60,13 +60,13 @@ export class SocketIOPropagatorService {
     this.pubSubService.subscribe(SOCKET_EVENT_PEERS).pipe(tap(this.consumeFromPeersEvent)).subscribe();
   }
 
-  injectSocketServer (server: Server): SocketIOPropagatorService {
+  injectSocketServer(server: Server): SocketIOPropagatorService {
     this.socketServer = server;
 
     return this;
   }
 
-  async emitToSocket (eventInfo: SpecificSocketPropagationMessage): Promise<boolean> {
+  async emitToSocket(eventInfo: SpecificSocketPropagationMessage): Promise<boolean> {
     const messageId = await this.publish(SOCKET_EVENT_SOCKET, eventInfo);
     const sent = await this.waitForPeerMessage(messageEmittedChannel, messageId);
 
@@ -82,7 +82,7 @@ export class SocketIOPropagatorService {
       const sent = socket.emit(channel, message);
 
       this.logger[sent ? 'log' : 'warn'](`${sent ? 'Successfully' : 'Unsuccessfully'} sent message: ${eventInfo.id}`);
-      
+
       if (sent) {
         await this.publish(SOCKET_EVENT_PEERS, {
           message: eventInfo.id,
@@ -94,11 +94,11 @@ export class SocketIOPropagatorService {
     }
   };
 
-  async emitToUser (eventInfo: UserSocketPropagationMessage): Promise<boolean> {
+  async emitToUser(eventInfo: UserSocketPropagationMessage): Promise<boolean> {
     if (!eventInfo.userId) {
       return false;
     }
-    
+
     const messageId = await this.publish(SOCKET_EVENT_USER, eventInfo);
 
     const sent = await this.waitForPeerMessage(messageEmittedChannel, messageId);
@@ -123,7 +123,7 @@ export class SocketIOPropagatorService {
     }
   };
 
-  async emitToAuthenticated (eventInfo: SocketMessage): Promise<boolean> {
+  async emitToAuthenticated(eventInfo: SocketMessage): Promise<boolean> {
     await this.publish(SOCKET_EVENT_ALL_AUTHENTICATED, eventInfo);
 
     return true;
@@ -141,7 +141,7 @@ export class SocketIOPropagatorService {
     this.peerMessages$.next({ channel, message });
   };
 
-  private async publish<T extends SocketMessage> (topic: string, eventInfo: T) {
+  private async publish<T extends SocketMessage>(topic: string, eventInfo: T) {
     const id = v4();
     await this.pubSubService.publish(topic, {
       id,
@@ -151,7 +151,7 @@ export class SocketIOPropagatorService {
     return id;
   }
 
-  waitForPeerMessage (channel: string, message?: any): Promise<boolean> {
+  waitForPeerMessage(channel: string, message?: any): Promise<boolean> {
     return firstValueFrom(
       race(
         this.peerMessages$.pipe(

@@ -1,17 +1,17 @@
 // create a module for the postgres pub sub provider
-import { UnwrapForRootArgs } from '@nestjs-enhanced/core';
+import { UnwrapForRootArgs } from '@tfnick/core';
 import { DynamicModule, Module } from '@nestjs/common';
 import { PGPubSubOptions, PG_PUBSUB_OPTIONS, pgPubSubProvider } from './postgres/postgresPubSub.provider';
 import { PgPubSubService } from './postgres/postgresPubSub.service';
 import { PUB_SUB_PROVIDER } from './pubSub.service';
 
-@Module({ })
+@Module({})
 export class PubSubModule {
-  static registerPostgres (useFactory: () => PGPubSubOptions) {
+  static registerPostgres(useFactory: () => PGPubSubOptions) {
     return this.registerPostgresAsync({ useFactory })
   }
 
-  static registerPostgresAsync <A extends any[]>(
+  static registerPostgresAsync<A extends any[]>(
     opts: {
       useFactory: (...args: A) => PGPubSubOptions,
       inject?: UnwrapForRootArgs<A>,

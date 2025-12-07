@@ -5,7 +5,9 @@
     "sourceMap": true,
     "inlineSourceMap": true,
     "paths": {
-      "@nestjs-enhanced/*": ["packages/*/src"]
+      "@tfnick/*": [
+        "packages/*/src"
+      ]
     }
   }
 }

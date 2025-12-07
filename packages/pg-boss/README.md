@@ -3,13 +3,13 @@
 A nestjs toolkit for interacting with integrate with [pg-boss](https://github.com/timgit/pg-boss/blob/master/docs/readme.md), a job queue system for PostgreSQL. It offers a more 'nest' style way to register workers and schedule work.
 
 ### Install:
-`npm install pg-boss @nestjs-enhanced/pg-boss`
+`npm install pg-boss @tfnick/pg-boss`
 
 ### Usage:
 
 #### Background work:
 ```ts
-import { ProcessQueue } from '@nestjs-enhanced/pg-boss';
+import { ProcessQueue } from '@tfnick/pg-boss';
 
 @Injectable()
 export class MyWorkerService {
@@ -19,7 +19,7 @@ export class MyWorkerService {
   }
 }
 
-import { PgBoss } from '@nestjs-enhanced/pg-boss';
+import { PgBoss } from '@tfnick/pg-boss';
 
 @Injectable()
 export class MyOtherService {
@@ -38,7 +38,7 @@ export class MyOtherService {
 
 #### Cron style work:
 ```ts
-import { PgBoss } from '@nestjs-enhanced/pg-boss';
+import { PgBoss } from '@tfnick/pg-boss';
 
 @Injectable()
 export class MyOtherService {

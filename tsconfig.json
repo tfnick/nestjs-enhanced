@@ -3,7 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@nestjs-enhanced/*": ["packages/*/src"]
+      "@tfnick/*": [
+        "packages/*/src"
+      ]
     }
   }
 }

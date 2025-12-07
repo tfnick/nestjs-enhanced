@@ -1,5 +1,5 @@
 {
-  "name": "@nestjs-enhanced/sockets",
+  "name": "@tfnick/sockets",
   "version": "1.2.5",
   "description": "",
   "main": "dist/index.js",
@@ -30,13 +30,13 @@
     "socket.io": "^4.7.2"
   },
   "dependencies": {
-    "@nestjs-enhanced/core": "*",
-    "@nestjs-enhanced/pub-sub": "*",
+    "@tfnick/core": "*",
+    "@tfnick/pub-sub": "*",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@nestjs-enhanced/core": "*",
-    "@nestjs-enhanced/pub-sub": "*",
+    "@tfnick/core": "*",
+    "@tfnick/pub-sub": "*",
     "@nestjs/common": "^10.2.7",
     "@nestjs/core": "^10.2.7",
     "@nestjs/platform-socket.io": "^10.2.7",

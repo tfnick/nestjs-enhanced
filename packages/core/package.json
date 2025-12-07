@@ -1,5 +1,5 @@
 {
-  "name": "@nestjs-enhanced/core",
+  "name": "@tfnick/core",
   "version": "1.2.5",
   "description": "",
   "main": "dist/index.js",

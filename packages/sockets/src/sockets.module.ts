@@ -1,4 +1,4 @@
-import { PubSubModule } from '@nestjs-enhanced/pub-sub';
+import { PubSubModule } from '@tfnick/pub-sub';
 import { Global, Module } from '@nestjs/common';
 import { SocketStateService } from './socket-state.service';
 import { SocketIOPropagatorService } from './socket.propagator';

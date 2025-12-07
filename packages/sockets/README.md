@@ -3,14 +3,14 @@
 A nestjs module that allows messages to be pushed from anywhere within the application via socket.io. Requests/Sockets should have an identifier on them to allow for targeting them. It leverages `nestjs`
 
 ### Install:
-`npm install @nestjs-enhanced/sockets @nestjs/platform-socket.io @nestjs/websockets socket.io`
+`npm install @tfnick/sockets @nestjs/platform-socket.io @nestjs/websockets socket.io`
 
 ### Usage:
 **Register Module**
 
 `main.ts`
 ```ts
-import { initSocketAdapters } from '@nestjs-enhanced/sockets';
+import { initSocketAdapters } from '@tfnick/sockets';
 
 export const bootstrap = async () => {
   const app = await NestFactory.create(AppModule);
@@ -31,8 +31,8 @@ export const bootstrap = async () => {
 *see [pub-sub](../pub-sub/)*
 
 ```ts
-import { PubSubModule } from '@nestjs-enhanced/pub-sub';
-import { SocketsModule } from '@nestjs-enhanced/sockets';
+import { PubSubModule } from '@tfnick/pub-sub';
+import { SocketsModule } from '@tfnick/sockets';
 
 @Module({
   imports: [
@@ -70,7 +70,7 @@ socket.on('some-channel', () => {
 
 ```ts
 
-import { SocketIOPropagatorService } from '@nestjs-enhanced/sockets';
+import { SocketIOPropagatorService } from '@tfnick/sockets';
 
 @Injectable()
 export class SomeService {

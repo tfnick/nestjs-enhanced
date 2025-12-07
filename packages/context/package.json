@@ -1,5 +1,5 @@
 {
-  "name": "@nestjs-enhanced/context",
+  "name": "@tfnick/context",
   "version": "1.2.5",
   "description": "",
   "prefix": "./",
@@ -27,10 +27,10 @@
     "@nestjs/common": ">=10.0.0"
   },
   "dependencies": {
-    "@nestjs-enhanced/core": "*"
+    "@tfnick/core": "*"
   },
   "devDependencies": {
-    "@nestjs-enhanced/core": "*",
+    "@tfnick/core": "*",
     "@nestjs/common": "^10.2.7"
   }
 }

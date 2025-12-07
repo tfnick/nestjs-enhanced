@@ -3,12 +3,12 @@
 A nestjs module for broadcasting/subscribing to events between different services. Currently only `postgres` is supported.
 
 ### Install:
-`npm install @nestjs-enhanced/pub-sub pg`
+`npm install @tfnick/pub-sub pg`
 
 ### Usage:
 **Register Module (postgres)**
 ```ts
-import { PubSubModule } from '@nestjs-enhanced/pub-sub';
+import { PubSubModule } from '@tfnick/pub-sub';
 
 @Module({
   imports: [
@@ -38,7 +38,7 @@ export class AppModule { }
 **Send/Receive message**
 ```ts
 //...
-import { InjectPubSub, PubSubService } from '@nestjs-enhanced/pub-sub';
+import { InjectPubSub, PubSubService } from '@tfnick/pub-sub';
 
 @Injectable()
 export class MyService {
