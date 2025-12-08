@@ -56,7 +56,7 @@ export class MyOtherService {
 ### QueueModule
 #### `register`:
 ```ts
-import { QueueModule } from 'path-to-queue-module';
+import { QueueModule } from 'pathcd-to-queue-module';
 
 @Module({
   imports: [
